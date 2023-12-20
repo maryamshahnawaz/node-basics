@@ -1,3 +1,27 @@
+
+const EventEmitter = require('events');
+
+const customEmitter = new EventEmitter();
+
+
+// we can pass parameter in events
+// events are core building blocks of code
+// always on methods comes first then 
+customEmitter.on('response', (name, id) => {
+ console.log(`data received ${name} with id:${id}`)
+})
+
+customEmitter.on('response', () => {
+ console.log(`some other data received`)
+
+})
+
+customEmitter.emit('response', "john", 34);
+
+
+// --------------Learning about JSON----------------
+
+
 // npm - global command, comes with node
 // npm --version
 
